@@ -1,4 +1,4 @@
-## Desítková na dvojkovou 283(10) na(2)  
+## Desítková na dvojkovou 283(10) na ?(2)  
 283:2 = 141 zbytek 1
 141:2 = 70 zbytek 1 
 70:2 = 35 zbytek 0
@@ -8,4 +8,65 @@
 4:2 = zbytek 0 
 2:2 = 1 zbytek 0 
 1:2 = zbytek 0
-## --- 283(10) - 11011000(2)
+## ---> 283(10) -> 11011000(2)
+
+## Desítková na šestnáctkovou 283(10) na ?(16)
+283:16 = 17 zbytek 11 
+17:16 = 1 zbytek 1 
+1:16 = 0 zbytek 1 
+## ---> 283(10) -> 11B(16)
+## Převod z binární do desítkové:
+8	1	256	1 × 256 = 256
+7	0	128	0 × 128 = 0
+6	0	64	0 × 64 = 0
+5	0	32	0 × 32 = 0
+4	1	16	1 × 16 = 16
+3	1	8	1 × 8 = 8
+2	0	4	0 × 4 = 0
+1	1	2	1 × 2 = 2
+0	1	1	1 × 1 = 1
+
+Součet:
+256 + 0 + 0 + 0 + 16 + 8 + 0 + 2 + 1 = 283
+
+Výsledek:
+100011011₂ = 283₁₀
+
+## Převod z hex na desítkové:
+Pozice (zprava)	Cifra	Hodnota	Mocnina 16ⁿ	Výpočet
+2	1	1	16² = 256	1 × 256 = 256
+1	1	1	16¹ = 16	1 × 16 = 16
+0	B	11	16⁰ = 1	11 × 1 = 11
+Součet:
+256 + 16 + 11 = 283
+
+Výsledek:
+11B₁₆ = 283₁₀
+
+## Převod binárního čísla 100011011₂ na šestnáctkovou soustavu:
+Krok 1: Doplníme bity zleva na násobek 4 (abychom mohli pohodlně seskupit po 4 bitech)
+
+100011011₂ má 9 bitů, doplníme tedy 3 nuly zleva, aby vzniklo 12 bitů:
+
+0001 0001 1011
+
+Krok 2: Převedeme každou skupinu 4 bitů na hex cifru
+0001 → 1
+0001 → 1
+1011 → B (11 v desítkové)
+
+Výsledek:
+100011011₂ = 11B₁₆
+## Šestnáctkovou na dvojkovou
+Krok 1: Převedeme každou hex cifru na 4 bity:
+Hex	Binární (4 bity)
+1	0001
+1	0001
+B	1011
+Krok 2: Spojíme všechny bity dohromady:
+
+0001 0001 1011
+
+Bez úvodních nul (pokud chceme stručně):
+
+100011011
